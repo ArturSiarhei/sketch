@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #f0f0f0; /* общий фон страницы */
+  font-family: monospace, sans-serif;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #f0f0f0;
+}
+
+.grid-item {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+
+  /* Обеспечиваем, что ячейки занимают все место в сетке */
+  width: 100%;
+  height: 100%;
+
+  /* Минимальный размер для удобства */
+  min-width: 150px;
+  min-height: 100px;
+  
+  /* Для визуальной проверки: можно временно включить */
+  /* background: #fff; */
+}
+
+/* Чтобы canvas растягивался по размеру контейнера (если будешь задавать в JS style.width и height в 100%) */
+.grid-item canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
